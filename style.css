@@ -1,0 +1,11 @@
+.image-container {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  border: solid black 1px;
+}
+
+.image {
+  max-height: 200px;
+  max-width: 200px;
+}
