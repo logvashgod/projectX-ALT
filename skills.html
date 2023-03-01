@@ -4,44 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-    />
     <title>Skills</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Main</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="skills.html"
-              >Skills</a
-            >
-            <a class="nav-link" href="#">Items</a>
-            <a class="nav-link" href="#">Journal</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <table>
-        <thead>
-          <tr>
-            <th>Skill</th>
-            <th>Level</th>
-          </tr>
-        </thead>
+    <ol class="skill-list">
+      <li>
+        Physic <span id="skill_lvl">1</span> <span id="xp_value">0</span>
+        <span>/</span> <span id="xpNeed">30</span>
+        <button id="new_plus">Plus</button>
+      </li>
+      <li>
+        Social communication <span id="skill_lvl1">1</span>
+        <span id="xp_value1">0</span> <span>/</span>
+        <span id="xpNeed1">30</span>
+        <button id="new_plus1">Plus</button>
+      </li>
+    </ol>
+    <script src="skills.js"></script>
   </body>
 </html>
