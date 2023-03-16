@@ -1,74 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Morphling</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-    />
-    <style>
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 50px;
-      }
-
-      .level {
-        font-size: 20px;
-        margin-bottom: 20px;
-      }
-
-      .xp {
-        font-size: 18px;
-        margin-bottom: 20px;
-      }
-
-      button {
-        padding: 10px 20px;
-        font-size: 16px;
-        margin: 10px;
-      }
-
-      .congrats {
-        font-size: 20px;
-        margin-top: 20px;
-      }
-    </style>
+    <link rel="stylesheet" href="navbar.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Main</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="skills.html"
-              >Skills</a
-            >
-            <a class="nav-link" href="#">Items</a>
-            <a class="nav-link" href="#">Journal</a>
-          </div>
-        </div>
-      </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Main</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
-    <div class="image-container">
-      <img
-        src="logvashmj_statue_of_head_of_greek_philosophermarcus_aurelius_ta_4e45d584-0994-4dd5-97fc-dbc0426ba081.png"
-        alt="Sorry =(("
-        class="image"
-      />
-    </div>
 
     <div class="container">
       <div class="level">Level: <span id="level-num">0</span></div>
@@ -78,14 +23,44 @@
         <span id="xp-max">200</span>
         <span>XP</span>
       </div>
-      <button type="button" id="button1">+10 XP</button>
+      <div class="quest">
+        <p id="quest1">Quest 1</p>
+      </div>
+      <button id="button1">+10 XP</button>
+      <div class="quest">
+        <p id="quest2">Quest 2</p>
+      </div>
       <button id="button2">+25 XP</button>
+      <div class="quest">
+        <p id="quest3">Quest 3</p>
+      </div>
       <button id="button3">+50 XP</button>
-      <hr />
+      <div id="items"></div>
+      <template id="itemTemplate">
+        <div class="item">
+          <input type="checkbox" class="item-completed" />
+          <input
+            type="text"
+            class="item-description"
+            placeholder="to-do-item...."
+          />
+        </div>
+      </template>
+      <button id="add">Add Item</button>
 
-      <button type="button" id="save_progress">Save progress</button>
-      <button type="button" id="load_progress">load_progress</button>
+      <hr />
+      <button id="save_progress" class="progress">Save progress</button>
+      <button id="load_progress" class="progress">Load progress</button>
+    </div>
+    <div class="questmaker">
+      <textarea id="1"></textarea>
+      <button id="add_quest">Add to Small</button>
+
+      <button id="add_quest1">Add to Middle</button>
+
+      <button id="add_quest2">Add to Big</button>
     </div>
     <script src="logic.js"></script>
+    <script src="addquest.js"></script>
   </body>
 </html>

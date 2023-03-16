@@ -1,0 +1,14 @@
+.add-note {
+  margin-top: 45px;
+  height: 150px;
+  border: none;
+  border-radius: 10px;
+  width: 150px;
+  background-color: blueviolet;
+  cursor: pointer;
+}
+
+.add-note:hover {
+  transition: 0.5s ease;
+  opacity: 1;
+}
