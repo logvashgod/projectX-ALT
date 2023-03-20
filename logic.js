@@ -139,6 +139,11 @@ loadProgres.addEventListener("click", () => {
   QUEST_ADDED2.innerHTML = storedQUEST_ADDED2;
 });
 
+//
+window.addEventListener("load", () => {
+  consolel
+});
+
 window.addEventListener("load", () => {
   minXPValue.innerHTML = storedCurrentXP;
   maxXPValue.innerHTML = storedMaxXPValue;
