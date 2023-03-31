@@ -140,18 +140,15 @@ loadProgres.addEventListener("click", () => {
 });
 
 //
-window.addEventListener("load", () => {
-  consolel
-});
 
-window.addEventListener("load", () => {
-  minXPValue.innerHTML = storedCurrentXP;
-  maxXPValue.innerHTML = storedMaxXPValue;
-  levelNum.innerHTML = storedLevelNum;
-  QUEST_ADDED.innerHTML = storedQUEST_ADDED;
-  QUEST_ADDED2.innerHTML = storedQUEST_ADDED1;
-  QUEST_ADDED2.innerHTML = storedQUEST_ADDED2;
-});
+// window.addEventListener("load", () => {
+//   minXPValue.innerHTML = storedCurrentXP;
+//   maxXPValue.innerHTML = storedMaxXPValue;
+//   levelNum.innerHTML = storedLevelNum;
+//   QUEST_ADDED.innerHTML = storedQUEST_ADDED;
+//   QUEST_ADDED2.innerHTML = storedQUEST_ADDED1;
+//   QUEST_ADDED2.innerHTML = storedQUEST_ADDED2;
+// });
 
 //--!--! task list
 const ITEMS_CONTAINER = document.getElementById("items");
