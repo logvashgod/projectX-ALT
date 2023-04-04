@@ -47,3 +47,62 @@ function updateTaskTable() {
     xpCell.innerHTML = task.xp;
   }
 }
+
+//campaign constraction
+
+let campaigns = [];
+
+function addCampaign() {
+  let campaignName = document.getElementById("campaignName").value;
+  let campaignDescription = document.getElementById(
+    "campaignDescription"
+  ).value;
+  let campaignXP = document.getElementById("campaignXP").value;
+
+  let newCampaign = {
+    name: campaignName,
+    description: campaignDescription,
+    xp: campaignXP,
+    task: [],
+  };
+
+  campaigns.push(newCampaign);
+
+  console.log(campaigns);
+
+  document.getElementById("campaignName").value = "";
+  document.getElementById("campaignDescription").value = "";
+  document.getElementById("campaignXP").value = "";
+
+  updateCampaignTable();
+}
+
+function updateCampaignTable() {
+  let tableBody = document
+    .getElementById("campaignTable")
+    .getElementsByTagName("Tbody")[0];
+
+  tableBody.innerHTML = "";
+
+  for (let i = 0; i < campaigns.length; i++) {
+    let campaign = campaigns[i];
+
+    let row = tableBody.insertRow(i);
+
+    let nameCell = row.insertCell(0);
+    nameCell.innerHTML = campaign.name;
+
+    let descriptionCell = row.insertCell(1);
+    descriptionCell.innerHTML = campaign.description;
+
+    let xpCell = row.insertCell(2);
+    xpCell.innerHTML = campaign.xp;
+
+    let tasksCell = row.insertCell(3);
+    tasksCell.innerHTML = campaign.tasks.length;
+
+    let viewTasksCell = row.insertCell(4);
+    viewTasksCell.innerHTML =
+      "<button onclick='viewTasks(" + i + ")'>View Tasks</button>";
+  }
+}
