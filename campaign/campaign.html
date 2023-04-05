@@ -27,6 +27,7 @@
             <th>Name</th>
             <th>Description</th>
             <th>XP</th>
+            <th>Assign to...</th>
           </tr>
         </thead>
         <tbody>
@@ -50,11 +51,7 @@
       <label for="campaignXP">Campaign Reward (XP)</label>
       <input type="number" id="campaignXP" name="campaignXP" required />
 
-      <input
-        type="submit"
-        value="Add Campaign"
-        onclick="addCampaign(); return false;"
-      />
+      <input type="submit" value="Add Campaign" onclick="addCampaign();" />
     </form>
 
     <table id="campaignTable">
@@ -65,7 +62,7 @@
           <th>XP</th>
         </tr>
       </thead>
-      <tbody id="tbodyCam">
+      <tbody>
         <!-- dinamic rows-->
       </tbody>
     </table>

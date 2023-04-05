@@ -45,6 +45,31 @@ function updateTaskTable() {
 
     let xpCell = row.insertCell(2);
     xpCell.innerHTML = task.xp;
+
+    let buttonCell = row.insertCell(3);
+    let button = document.createElement("button");
+    button.innerText = "+";
+    button.onclick = function () {
+      openCampaignMenu(task);
+    };
+    buttonCell.appendChild(button);
+
+    //dropown of campaigns
+    let campaignList = "";
+
+    for (let j = 0; j < campaigns.length; j++) {
+      campaignList += `
+        <option value="${j}">${campaigns[j].name}</option>
+        `;
+    }
+    let dropdownCell = row.insertCell(4);
+    dropdownCell.innerHTML = `
+    <select id="campaignSelect${i}">
+        <option value="-1">Assign to a campaign</option>
+        ${campaignList}
+      </select>
+      <button onclick="assignTaskToCampaign(${i})">Assign</button>
+    `;
   }
 }
 
@@ -80,7 +105,7 @@ function addCampaign() {
 function updateCampaignTable() {
   let tableBody = document
     .getElementById("campaignTable")
-    .getElementsByTagName("Tbody")[0];
+    .getElementsByTagName("tbody")[0];
 
   tableBody.innerHTML = "";
 
@@ -97,12 +122,5 @@ function updateCampaignTable() {
 
     let xpCell = row.insertCell(2);
     xpCell.innerHTML = campaign.xp;
-
-    let tasksCell = row.insertCell(3);
-    tasksCell.innerHTML = campaign.tasks.length;
-
-    let viewTasksCell = row.insertCell(4);
-    viewTasksCell.innerHTML =
-      "<button onclick='viewTasks(" + i + ")'>View Tasks</button>";
   }
 }
