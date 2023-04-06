@@ -228,5 +228,3 @@ ADD_BUTTON.addEventListener("click", () => {
 });
 // refresh
 refreshList();
-
-////

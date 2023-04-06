@@ -4,68 +4,76 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Container</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>Campaign Constructor</h1>
-    <h2>TASKS</h2>
-    <form>
-      <label for="taskName">Task Name:</label>
-      <input type="text" id="taskName" name="taskName" /><br />
+    <div id="container">
 
-      <label for="taskDescription">Task Description:</label>
-      <input type="text" id="taskDescription" name="taskDecription" /><br />
+        <h2>TASKS</h2>
+        <form>
+          <label for="taskName">Task Name:</label>
+          <input type="text" id="taskName" name="taskName" /><br />
+    
+          <label for="taskDescription">Task Description:</label>
+          <input type="text" id="taskDescription" name="taskDecription" /><br />
+    
+          <label for="taskXP">Reward:</label>
+          <input type="number" id="taskXP" name="taskXP" /><br />
+    
+          <button type="button" onclick="addTask()">Add Task</button>
+    
+          <table id="taskTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>XP</th>
+                <th>Assign to...</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Task rows will be added dynamically here -->
+            </tbody>
+          </table>
+    </div>
+    <div id="container2">
 
-      <label for="taskXP">Reward:</label>
-      <input type="number" id="taskXP" name="taskXP" /><br />
-
-      <button type="button" onclick="addTask()">Add Task</button>
-
-      <table id="taskTable">
+        <h2>Campaign</h2>
+        <label for="campaignName">Campaign Name</label>
+        <input type="text" id="campaignName" name="campaignName" required />
+  
+        <label for="campaignDescription">Campaign Description</label>
+        <input
+          type="text"
+          id="campaignDescription"
+          name="campaignDescription"
+          required
+        />
+  
+        <label for="campaignXP">Campaign Reward (XP)</label>
+        <input type="number" id="campaignXP" name="campaignXP" required />
+  
+        <input type="submit" value="Add Campaign" onclick="addCampaign();" />
+      </form>
+  
+      <table id="campaignTable">
         <thead>
           <tr>
             <th>Name</th>
             <th>Description</th>
             <th>XP</th>
-            <th>Assign to...</th>
           </tr>
         </thead>
         <tbody>
-          <!-- Task rows will be added dynamically here -->
+          <!-- dinamic rows-->
         </tbody>
       </table>
-      ---
+    </div>
 
-      <h2>Campaign</h2>
-      <label for="campaignName">Campaign Name</label>
-      <input type="text" id="campaignName" name="campaignName" required />
-
-      <label for="campaignDescription">Campaign Description</label>
-      <input
-        type="text"
-        id="campaignDescription"
-        name="campaignDescription"
-        required
-      />
-
-      <label for="campaignXP">Campaign Reward (XP)</label>
-      <input type="number" id="campaignXP" name="campaignXP" required />
-
-      <input type="submit" value="Add Campaign" onclick="addCampaign();" />
-    </form>
-
-    <table id="campaignTable">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>XP</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- dinamic rows-->
-      </tbody>
-    </table>
+    <hr />
+    <button id="safebtn" onclick="safeAll">Safe</button>
     <script src="main.js"></script>
   </body>
 </html>

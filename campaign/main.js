@@ -46,14 +46,6 @@ function updateTaskTable() {
     let xpCell = row.insertCell(2);
     xpCell.innerHTML = task.xp;
 
-    let buttonCell = row.insertCell(3);
-    let button = document.createElement("button");
-    button.innerText = "+";
-    button.onclick = function () {
-      openCampaignMenu(task);
-    };
-    buttonCell.appendChild(button);
-
     //dropown of campaigns
     let campaignList = "";
 
@@ -62,7 +54,7 @@ function updateTaskTable() {
         <option value="${j}">${campaigns[j].name}</option>
         `;
     }
-    let dropdownCell = row.insertCell(4);
+    let dropdownCell = row.insertCell(3);
     dropdownCell.innerHTML = `
     <select id="campaignSelect${i}">
         <option value="-1">Assign to a campaign</option>
@@ -123,4 +115,17 @@ function updateCampaignTable() {
     let xpCell = row.insertCell(2);
     xpCell.innerHTML = campaign.xp;
   }
+}
+
+function assignTaskToCampaign(taskIndex) {
+  let campaignIndex = document.getElementById(
+    `campaignSelect${taskIndex}`
+  ).value;
+  if (campaignIndex >= 0) {
+    campaigns[campaignIndex].tasks.push(tasks[taskIndex]);
+  }
+}
+
+function safeAll() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 }
